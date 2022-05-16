@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora 3.0</title>
+</head>
+<body>
+    <script>
+        function calculadora() {
+        let operacion = parseInt(prompt("¿Qué operación quieres realizar?\n(coloca el numero)\n \n 1. Suma\n 2. Resta\n 3. Multiplicación\n 4. Dividición\n 5 Potencia\n 6. Ecuación cuadratica"));
+
+            switch (operacion) {
+                case 1:
+                    let d = parseInt(prompt("Inserta el primer numero:"));
+                    let e = parseInt(prompt("Inserta el segundo numero:"));
+                        let suma = d + e;
+                            alert(`El total es ${suma}`);
+                    break;
+                case 2:
+                    let f = parseInt(prompt("Inserta el minuendo:"));
+                    let g = parseInt(prompt("Inserta el sustraendo:"));
+                        let resta = f - g;
+                            alert(`La diferencia es ${resta}`);
+                    break;
+                case 3:
+                    let h = parseInt(prompt("Inserta el multiplicando:"));
+                    let i = parseInt(prompt("Inserta el multiplicador:"));
+                        let multiplicacion = h * i;
+                            alert(`El producto es ${multiplicacion}`);
+                    break;
+                case 4:
+                    let j = parseInt(prompt("Inserta el dividiendo:"));
+                    let k = parseInt(prompt("Inserta el divisor:"));
+                        let divicion = j / k;
+                            alert(`El coeficiente es ${parseFloat(divicion)}`);
+                    break;
+                case 5:
+                    let l = parseInt(prompt("Inserta la base:"));
+                    let m = parseInt(prompt("Inserta el exponente:"));
+                        let potencia = Math.pow(l, m);
+                            alert(`La potencia o resultado es: ${potencia}`);
+                    break;
+                case 6:
+                    let a = parseInt(prompt("Inserta a:"));
+                    let b = parseInt(prompt("Inserta b:"));
+                    let c = parseInt(prompt("Inserta c:"));
+                    let parte1 = (-1)*b;
+                    let parte2 = Math.pow(b,2)-(4*a*c);
+                    let parte3 = 2*a;
+                        if (parte2 > 0) {
+                            let x1 = (parte1 - Math.sqrt(parte2))/parte3;
+                            let x2 = (parte1 + Math.sqrt(parte2))/parte3;
+                            alert(`Los posibles valores de x son ${parseFloat(x1)} y ${parseFloat(x2)}`);
+                        } else {
+                            let x3 = parte1/parte3;
+                            alert(`El valor de x es ${x3}`);
+                        }
+                    break;
+                default:
+                        alert("Lo siento no comprendo que operación deseas realizar");
+                    break;
+            }    
+        }
+        
+        let pregunta;
+
+            do {
+                calculadora();
+                pregunta  = prompt("¿Desea realizar otra operacion operación?(s/n)");
+            } while (pregunta === "s");
+    
+        document.write("En caso de querer usar la calculaladora refresque la página")
+        document.write("Para ver los ejercicios del video 35 abra la consola")
+                
+        //Programa una función que invierta las palabras de una cadena de texto, pe.miFuncion("Hola Mundo") devolverá "odnuM aloH".
+        const invertir = saludo => saludo.split("").reverse().join("");
+        console.log(invertir("Hola Mundo"));
+
+        //Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+        const contar = (saludoDespedida, buscar) => {
+        let nCoincidencias = 0;
+        let contador = 0;
+        while (nCoincidencias !== -1) {
+               nCoincidencias = saludoDespedida.indexOf(buscar, nCoincidencias);
+               if (nCoincidencias !== -1) {
+                   nCoincidencias++;
+                   contador++;
+               }
+        }
+        console.log(contador)
+        }
+        contar("hola mundo adios mundo", "mundo")
+
+        //Programa una función que valide si una palabra o frase dada, es un palindromo (que se lee igual en un sentido que en otro), pe.miFuncion("salas") debolverá true.
+        let palabra = "salas"
+        let palindromo = palabra => 
+        palabra.split("").reverse().join("")
+        let validacion = (palabra, palindromo) => {
+        if (palabra == palindromo) {
+            console.log(true)
+        }}
+        validacion()
+
+        //Programa una función que elimine cierto patrón de caracteres de un texto dado, pe.miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5, "xyz") devolverá "1, 2, 3, 4 y 5"
+        const eliminar =(cadenaDeTexto, patron) => console.log(cadenaDeTexto.replace(new RegExp(patron, "ig"), ""))
+        eliminar("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+    </script>
+</body>
+</html>
